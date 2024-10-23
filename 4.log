@@ -1,0 +1,59 @@
+Script started on 2024-10-23 21:42:20+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="222" LINES="58"]
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ docker run -d[Kt -d -v $(pwd):/data --name centos-1 centos
+[?2004ld6bf94bbf23ad614da4434dfb79b57db2995ce7e3b75d0295a07138651473240
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ docker run -t -d -v $(pwd):/data --name centos-1 centos[K[K[K[K[K[Kdebian[1P[1P[1P[1P[1P[1P[1@d[1@e[1@b[1@i[1@a[1@n
+[?2004l2fba129d24774b7922c8615ec50ee0289499bf159ba9e1bc82a58c7cc0b0dc8e
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ docker ps
+[?2004lCONTAINER ID   IMAGE     COMMAND       CREATED          STATUS          PORTS     NAMES
+2fba129d2477   debian    "bash"        3 seconds ago    Up 3 seconds              debian-1
+d6bf94bbf23a   centos    "/bin/bash"   18 seconds ago   Up 18 seconds             centos-1
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ docker exec --help
+[?2004l
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+
+Aliases:
+  docker container exec, docker exec
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --env-file list        Read in a file of environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: "<name|uid>[:<group|gid>]")
+  -w, --workdir string       Working directory inside the container
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ docker exec --help[K[K[K[K[Ki [Kt centos-1  /bin/bash
+[?2004l]0;@d6bf94bbf23a:/[root@d6bf94bbf23a /]# cd /data/
+]0;@d6bf94bbf23a:/data[root@d6bf94bbf23a data]# echo "this centos container" > centos-1.txt
+]0;@d6bf94bbf23a:/data[root@d6bf94bbf23a data]# exit
+exit
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ ls
+[?2004l4.log  centos-1.txt  [0m[01;35mimage-1.png[0m  [01;35mimage-2.png[0m  [01;35mimage-3.png[0m  [01;35mimage-4.png[0m  [01;35mimage.png[0m  README.md
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ echo "this host machine" > host-1.txt
+[?2004l[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ e[Kdocj[Kker exec -it debian-1 /bin/bash
+[?2004l[?2004hroot@2fba129d2477:/# cd /data
+[?2004l[?2004hroot@2fba129d2477:/data# ls -l
+[?2004ltotal 1132
+-rw-rw-r-- 1 1000 1000      0 Oct 23 18:42 4.log
+-rw-rw-r-- 1 1000 1000   1758 Oct 23 17:59 README.md
+-rw-r--r-- 1 root root     22 Oct 23 18:44 centos-1.txt
+-rw-rw-r-- 1 1000 1000     18 Oct 23 18:46 host-1.txt
+-rw-rw-r-- 1 1000 1000 273591 Oct 23 15:13 image-1.png
+-rw-rw-r-- 1 1000 1000 247722 Oct 23 16:55 image-2.png
+-rw-rw-r-- 1 1000 1000 318953 Oct 23 17:44 image-3.png
+-rw-rw-r-- 1 1000 1000 142160 Oct 23 17:59 image-4.png
+-rw-rw-r-- 1 1000 1000 157845 Oct 23 15:08 image.png
+[?2004hroot@2fba129d2477:/data# cat centos-1.txt 
+[?2004lthis centos container
+[?2004hroot@2fba129d2477:/data# cat host-1.txt 
+[?2004lthis host machine
+[?2004hroot@2fba129d2477:/data# exit
+[?2004lexit
+[?2004h]0;a148ru@polaris134: ~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[01;32ma148ru@polaris134[00m:[01;34m~/Documents/Нетология/DevOps/3.homework.docker/homeworkv3[00m$ exit
+[?2004lexit
+
+Script done on 2024-10-23 21:52:15+03:00 [COMMAND_EXIT_CODE="0"]

@@ -61,3 +61,11 @@ docker start custom-nginx-t2
 
 ![alt text](image-4.png)
 
+#### Задача 4
+
+![alt text](image-5.png)
+
+[4.log](4.log)
+
+#### Задача 5
+
