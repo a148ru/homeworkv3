@@ -69,3 +69,34 @@ docker start custom-nginx-t2
 
 #### Задача 5
 
+##### 5.1
+
+![alt text](image-6.png)
+
+запущен был ```compose.yaml``` . Compose предпочитает каноническое именование файлов ```compose.yaml``` и ```compose.yml```
+
+##### 5.2
+
+![alt text](image-8.png)
+![alt text](image-7.png)
+
+используем ```include```
+
+##### 5.3
+
+![alt text](image-9.png)
+
+##### 5.[4-6]
+
+![alt text](image-13.png)
+![alt text](image-10.png)
+
+##### 5.7
+
+![alt text](image-11.png)
+
+Сообщает что есть потеренные контейнеры и предлагает удальть их из проекта
+
+![alt text](image-12.png)
+
+[compose.yaml](task5/compose.yaml)
